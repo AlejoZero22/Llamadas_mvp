@@ -1,0 +1,34 @@
+{
+  "personajes": [
+    {
+      "id": 1,
+      "nombre": "Zero",
+      "telefono": "0204082480",
+      "favorito": false
+    },
+    {
+      "id": 2,
+      "nombre": "Link",
+      "telefono": "6589478526",
+      "favorito": false
+    },
+    {
+      "id": 3,
+      "nombre": "Don Celular muerta",
+      "telefono": "6453597850",
+      "favorito": false
+    },
+    {
+      "id": 4,
+      "nombre": "Mega X",
+      "telefono": "2648975605",
+      "favorito": false
+    },
+    {
+      "id": 5,
+      "nombre": "Mario",
+      "telefono": "3689745821",
+      "favorito": false
+    }
+  ]
+}
