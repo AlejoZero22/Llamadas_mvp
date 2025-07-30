@@ -1,3 +1,9 @@
+import React from 'react';
+import AppNavigator from './screens/Navigator/AppNavigator';
+
+export default function App() {
+  return <AppNavigator />;
+}
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import dbData from './data/db.json';
