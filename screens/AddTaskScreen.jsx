@@ -9,27 +9,27 @@ import {
 } from 'react-native';
 
 export default function AddTaskScreen({ navigation, route }) {
-  const [title, setTitle] = useState('');
+  const [Nombre, setNombre] = useState('');
+  const [Numero, setNumero] = useState('');
 
-  // Recuperamos la función addTask pasada desde TaskListScreen
   const { addTask } = route.params || {};
 
-  const isValid = title.trim().length >= 3;
+  const isValid = Nombre.trim().length >= 3;
 
   const handleAdd = () => {
     if (!isValid) {
-      Alert.alert('Error', 'El título debe tener al menos 3 caracteres.');
+      Alert.alert('Error', 'El contacto debe tener al menos 3 caracteres.');
       return;
     }
-    const newTask = {
+    const newContacto = {
       id: Date.now(),
-      title: title.trim(),
-      completed: false,
+      Nombre: Nombre.trim(),
+      Numero: Numero.trim(),
+      favorite: false,
     };
 
-    // Llamamos al callback sólo si existe
     if (typeof addTask === 'function') {
-      addTask(newTask);
+      addTask(newContacto);
     } else {
       console.warn('addTask no está definido');
     }
@@ -43,14 +43,21 @@ export default function AddTaskScreen({ navigation, route }) {
 
       <TextInput
         style={styles.input}
-        placeholder="Título de la tarea (mín. 3 caracteres)"
-        value={title}
-        onChangeText={setTitle}
+        placeholder="Nombre Nuevo Contacto (Debe tener un Nombre)"
+        value={Nombre}
+        onChangeText={setNombre}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Número de Teléfono"
+        value={Numero}
+        onChangeText={setNumero}
+        keyboardType="phone-pad"
       />
 
-      { !isValid && title.length > 0 && (
+      { !isValid && Nombre.length > 0 && (
         <Text style={styles.errorText}>
-          El Contacto debe tener al menos 3 caracteres.
+          El Contacto debe tener Nombre.
         </Text>
       )}
 
@@ -60,10 +67,13 @@ export default function AddTaskScreen({ navigation, route }) {
           onPress={handleAdd}
           disabled={!isValid}
         />
-        { title.length > 0 && (
+        { Nombre.length > 0 && (
           <Button
             title="Limpiar"
-            onPress={() => setTitle('')}
+            onPress={() => {
+              setNombre('');
+              setNumero('');
+            }}
           />
         )}
       </View>
@@ -84,3 +94,4 @@ const styles = StyleSheet.create({
   errorText:  { color: 'red', marginBottom: 8 },
   buttons:    { flexDirection: 'row', justifyContent: 'space-between' },
 });
+
