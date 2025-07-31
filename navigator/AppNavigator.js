@@ -11,8 +11,8 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Tasks" component={TaskListScreen} />
-        <Stack.Screen name="AddTask" component={AddTaskScreen} />
+        <Stack.Screen name="Contactos" component={TaskListScreen} />
+        <Stack.Screen name="AgregarContacto" component={AddTaskScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

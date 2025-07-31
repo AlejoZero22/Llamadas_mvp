@@ -36,7 +36,7 @@ export default function TaskListScreen({ navigation }) {
         {displayedContactos.map(contacto => (
           <View key={contacto.id} style={styles.taskRow}>
             <Text style={styles.icon}>
-              {contacto.favorite ? '★' : '☆'}
+              {contacto.favorite ? 'Favorito ★' : 'Quitar Favorito ☆'}
             </Text>
             <Text style={styles.taskText}>
               {contacto.Nombre} - {contacto.Numero}

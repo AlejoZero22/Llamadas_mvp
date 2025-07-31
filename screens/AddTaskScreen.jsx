@@ -18,7 +18,7 @@ export default function AddTaskScreen({ navigation, route }) {
 
   const handleAdd = () => {
     if (!isValid) {
-      Alert.alert('Error', 'El contacto debe tener al menos 3 caracteres.');
+      Alert.alert('Error', 'El contacto debe tener Nombre.');
       return;
     }
     const newContacto = {
@@ -43,7 +43,7 @@ export default function AddTaskScreen({ navigation, route }) {
 
       <TextInput
         style={styles.input}
-        placeholder="Nombre Nuevo Contacto (Debe tener un Nombre)"
+        placeholder="Nombre Nuevo Contacto"
         value={Nombre}
         onChangeText={setNombre}
       />
@@ -54,29 +54,7 @@ export default function AddTaskScreen({ navigation, route }) {
         onChangeText={setNumero}
         keyboardType="phone-pad"
       />
-
-      { !isValid && Nombre.length > 0 && (
-        <Text style={styles.errorText}>
-          El Contacto debe tener Nombre.
-        </Text>
-      )}
-
-      <View style={styles.buttons}>
-        <Button
-          title="Crear Contacto"
-          onPress={handleAdd}
-          disabled={!isValid}
-        />
-        { Nombre.length > 0 && (
-          <Button
-            title="Limpiar"
-            onPress={() => {
-              setNombre('');
-              setNumero('');
-            }}
-          />
-        )}
-      </View>
+      <Button title="Crear Contacto" onPress={handleAdd} disabled={!isValid} />
     </View>
   );
 }
