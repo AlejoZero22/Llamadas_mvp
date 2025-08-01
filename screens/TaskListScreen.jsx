@@ -51,7 +51,7 @@ export default function TaskListScreen({ navigation }) {
       </ScrollView>
       <Button
         title="Crear Nuevo contacto"
-        onPress={() => navigation.navigate('AddTask', { addTask: addContacto })}
+        onPress={() => navigation.navigate('AgregarContacto', { addTask: addContacto })}
       />
     </View>
   );
